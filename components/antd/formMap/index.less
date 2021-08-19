@@ -1,0 +1,25 @@
+.form-map {
+  display: flex;
+  flex-wrap: wrap;
+  .form-item {
+    width: 100%;
+  }
+  &.row-2 {
+    .form-item {
+      width: calc(50% - 5px);
+      margin-right: 10px;
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+  }
+  &.row-3 {
+    .form-item {
+      width: calc((100% - 20px) / 3);
+      margin-right: 10px;
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+  }
+}
