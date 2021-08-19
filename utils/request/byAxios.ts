@@ -18,7 +18,20 @@ function request(config: AxiosRequestConfig) {
     timeout: 10000,
     method: "get",
   });
-  instance.interceptors.request.use;
+
+  //  请求拦截
+  instance.interceptors.request.use(
+    //  请求前的拦截
+    (config: AxiosRequestConfig) => {
+      return config;
+    },
+    // 请求错误前的拦截
+    (error) => {
+      return Promise.reject(error);
+    }
+  );
+
+  // ! 响应拦截
   instance.interceptors.response.use(
     (res) => {
       return res.data;
@@ -27,11 +40,10 @@ function request(config: AxiosRequestConfig) {
       return err;
     }
   );
-
+  // 因为axios get 使用的属性名是 params 这里做的兼容
   if (!config.method || config.method === "get") {
     config.params = config.data;
   }
-  config.url = config.url?.replace("/api", "");
   return instance({
     ...config,
   });
