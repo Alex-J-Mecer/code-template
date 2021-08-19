@@ -1,0 +1,14 @@
+{
+  "name": "template-code",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:a8655099449/code-template.git",
+  "author": "kuangwei <865509949@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "-": "^0.0.1",
+    "@types/axios": "^0.14.0",
+    "@types/node": "^16.6.1",
+    "axios": "^0.21.1"
+  }
+}
